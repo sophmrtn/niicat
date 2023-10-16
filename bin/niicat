@@ -33,12 +33,12 @@ def main():
     if args.ic:
         niipre_path = resource_filename('niicat.resources', 'niipre_to_buffer.py')
         imgcat_path = resource_filename('niicat.resources', 'imgcat.sh')
-        os.system("python " + niipre_path + " " + args.nifti_file + " " + str(args.dpi) + " | " + imgcat_path)
+        os.system("python3 " + niipre_path + " " + args.nifti_file + " " + str(args.dpi) + " | " + imgcat_path)
     elif args.lb:
         niipre_path = resource_filename('niicat.resources', 'niipre_to_buffer.py')
         imgcat_path = "img2sixel"
         if is_executable(imgcat_path):
-            os.system("python " + niipre_path + " " + args.nifti_file + " " + str(args.dpi) + " | " + imgcat_path)
+            os.system("python3 " + niipre_path + " " + args.nifti_file + " " + str(args.dpi) + " | " + imgcat_path)
         else:
             print("ERROR: the command 'img2sixel' is not available in your PATH. " +
                   "Install libsixel-bin to make it available.")
